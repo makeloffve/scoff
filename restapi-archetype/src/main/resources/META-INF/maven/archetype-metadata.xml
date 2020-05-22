@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="template rest api, creator: c.j.g.u">
+    <fileSets>
+        <fileSet filtered="true" packaged="true">
+            <directory>src/main/java</directory>
+            <include>**/*.java</include>
+            <include>apis</include>
+            <include>daos</include>
+            <include>managers</include>
+            <include>services</include>
+            <include>constants</include>
+        </fileSet>
+        <fileSet filtered="true" packaged="false">
+            <directory>src/main/resources</directory>
+        </fileSet>
+        <fileSet filtered="true" packaged="true">
+            <directory>src/test/java</directory>
+            <include>**/*.java</include>
+        </fileSet>
+        <fileSet filtered="true" packaged="false">
+            <directory></directory>
+            <includes>
+                <include>*.md</include>
+                <include>*.sh</include>
+                <include>Dockerfile</include>
+                <include>.gitignore</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+    <requiredProperties>
+        <requiredProperty key="groupId">
+            <defaultValue>io.cjgu</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+</archetype-descriptor>

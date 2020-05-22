@@ -1,0 +1,37 @@
+server:
+  port: 8080
+logging:
+  level:
+    root: info
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://os-mysql-svc:3306/mysql?useUnicode=true&characterEncoding=utf-8&useSSL=false&useTimezone=true&serverTimezone=GMT%2B8
+    username: root
+    password: cloudos
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 1 from dual
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      filters: stat, wall
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: admin
+        login-password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
