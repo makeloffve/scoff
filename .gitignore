@@ -24,3 +24,7 @@
 *.iml
 *.ipr
 /out/
+
+### Git ###
+
+# .gitkeep
